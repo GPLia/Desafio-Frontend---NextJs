@@ -18,24 +18,28 @@ To get started with this project, clone the repository and install the dependenc
 git clone https://github.com/GPLia/Next_Auth.git
 cd Next_Auth
 pnpm install
+```
 
-Usage
+## Usage
 To run the development server:
 
 Open http://localhost:3000 with your browser to see the result.
 
-Configuration
+## Configuration
 Environment Variables
 Create a .env.local file in the root of your project and add the following environment variables:
 
+```sh
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your_secret_key
+```
 
-Providers
+## Providers
 Configure your authentication providers in pages/api/auth/[...nextauth].ts. For example, to use GitHub as a provider:
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 
+```sh
 export default NextAuth({
   providers: [
     Providers.GitHub({
@@ -46,8 +50,9 @@ export default NextAuth({
   ],
   // Additional NextAuth.js configuration options
 });
+````
 
-Contributing
+## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
 Fork the repository.
@@ -56,5 +61,6 @@ Make your changes.
 Commit your changes (git commit -m 'Add some feature').
 Push to the branch (git push origin feature/your-feature).
 Open a pull request.
-License
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
