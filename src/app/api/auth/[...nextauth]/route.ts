@@ -23,10 +23,7 @@ const handler = NextAuth({
           return null;
         }
 
-        if (
-          credentials.login === "teste@gmail.com" &&
-          credentials.password === "123456"
-        ) {
+        if (credentials.login === "teste" && credentials.password === "123") {
           return {
             id: "1",
             name: "Teste",
