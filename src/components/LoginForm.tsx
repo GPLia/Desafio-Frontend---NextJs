@@ -20,7 +20,7 @@ export default function LoginForm() {
 
         signIn('credentials', {
             ...Data,
-           callbackUrl: "/dashboard",
+           callbackUrl: "/Inventory",
         });
     }
 

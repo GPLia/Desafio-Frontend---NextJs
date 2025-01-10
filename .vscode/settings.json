@@ -1,0 +1,81 @@
+{
+    "editor.occurrencesHighlight": "off",
+    "editor.selectionHighlight": false,
+    "tabnine.experimentalAutoImports": true,
+    "editor.formatOnSave": true,
+    "terminal.integrated.env.windows": {},
+    "git.autofetch": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "remote.SSH.remotePlatform": {
+      "192.168.0.11": "linux"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+    "terminal.integrated.env.linux": {},
+    "redhat.telemetry.enabled": true,
+    "[jsonc]": {
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "git.confirmSync": false,
+    "yaml.schemas": {
+      "file:///c%3A/Users/Lucas/.vscode/extensions/atlassian.atlascode-3.2.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.suggestSmartCommit": false,
+    "console-ninja.featureSet": "Community",
+    "atlascode.jira.lastCreateSiteAndProject": {
+      "siteId": "",
+      "projectKey": ""
+    },
+    "explorer.confirmDragAndDrop": false,
+    "editor.stickyScroll.enabled": false,
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "svipas.prettier-plus"
+    },
+    // "bootstrapIntelliSense.version": "Bootstrap v4.0",
+    "tailwindCSS.emmetCompletions": true,
+    "cSpell.language": "en,pt-BR",
+    "bootstrapIntelliSense.version": "Bootstrap v5.3",
+    "[php]": {
+      "editor.defaultFormatter": "svipas.prettier-plus"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.minimap.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "workbench.colorTheme": "Dracula Theme",
+    "[astro]": {
+      "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+    "debug.javascript.autoAttachFilter": "always",
+    "cSpell.userWords": [
+      "Firmwares",
+      "resetpassword",
+      "swiper"
+    ],
+    "explorer.confirmDelete": false,
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
+  }
