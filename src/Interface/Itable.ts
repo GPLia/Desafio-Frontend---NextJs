@@ -1,4 +1,5 @@
 export interface DataTable {
+  // Interface para a tabela de produtos
   ID: number;
   descricao: string;
   codigo_de_barras: string;
