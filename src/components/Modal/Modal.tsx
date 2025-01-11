@@ -1,3 +1,5 @@
+import { PiXBold } from "react-icons/pi";
+
 interface ModalProps {
   // é uma interface que define as propriedades que o componente Modal aceita
   isOpen: boolean;
@@ -20,10 +22,10 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
           <div className="modal-action">{children}</div>
         </div>
         <button
-          className="btn bg-customBlue absolute top-3 right-8 border-0"
+          className="text-white btn bg-customBlue absolute top-3 right-8 border-0"
           onClick={onClose}
         >
-          X
+          <PiXBold />
         </button>
       </div>
     )
