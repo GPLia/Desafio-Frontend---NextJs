@@ -1,5 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { PiListBold, PiXBold } from "react-icons/pi";
 import { useOpenSideBar } from "./hooks/useOpenSideBar";
 import SideBar from "./SideBar";
@@ -7,7 +8,16 @@ import SideBar from "./SideBar";
 export default function NewSideBar() {
   const pathname = usePathname(); // obter a rota atual
 
-  const { handleToogle, isOpen } = useOpenSideBar(); // hook par gerenciar o estado da sidebar
+  const { handleToogle, isOpen, setIsOpen } = useOpenSideBar(); // hook par gerenciar o estado da sidebar
+  const [previousPathName, setPreviousPathName] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (previousPathName != pathname) {
+      setPreviousPathName(pathname);
+      setIsOpen(false);
+      console.log(pathname);
+    }
+  }, [pathname, previousPathName, setIsOpen]);
 
   // condicional para nao renderizar a sidebar na pagina inicial
   if (pathname === "/") {

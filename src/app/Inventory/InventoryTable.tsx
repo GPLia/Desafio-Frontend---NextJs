@@ -17,8 +17,12 @@ import {
   PiArrowDownBold,
   PiArrowLeftBold,
   PiArrowRightBold,
+  PiFunnelFill,
   PiMagnifyingGlassBold,
+  PiPencilSimpleFill,
   PiPlusBold,
+  PiTrashSimpleFill,
+  PiXBold,
 } from "react-icons/pi";
 
 const columns: ColumnDef<(typeof data)[0]>[] = [
@@ -77,15 +81,35 @@ function InventoryTable() {
   });
 
   return (
-    <main className="flex flex-col  px-20 py-6 h-[100vh] w-screen bg-customWhite ">
-      <div className="bg-customWhite px-6 h-full w-full mx-auto rounded-md shadow-custom">
-        <h1 className="text-xl text-black font-semibold my-6">
+    <main
+      className="flex flex-col  px-20 py-6 h-[100vh] w-screen bg-customWhite
+      max-sm:text-start max-md:p-3 max-md:text-center max-md:w-full max-md:fixed "
+    >
+      <div
+        className="bg-customWhite px-6 h-full w-full mx-auto rounded-md shadow-custom
+        max-md:min-w-full"
+      >
+        <h1
+          className="text-xl text-black font-semibold my-6
+          max-md:text-sm"
+        >
           Cadastro de produtos
         </h1>
 
-        <div className="flex items-center justify-between px-6 py-4 bg-customWhite rounded-md shadow-custom ">
-          <div className="flex items-center gap-5">
-            <h1 className="font-bold text-[0.9rem]">Pesquisar</h1>
+        <div
+          className="flex items-center justify-between px-6 py-4 bg-customWhite rounded-md shadow-custom
+          max-md:flex-col max-md:px-3 max-md:text-start max-md:text-xs"
+        >
+          <div
+            className="flex items-center gap-5
+            max-md:flex max-md:flex-wrap max-md:w-auto"
+          >
+            <h1
+              className="font-bold text-[0.9rem] 
+                max-md:text-[0.7rem]"
+            >
+              Pesquisar
+            </h1>
             <input
               className="input input-info input-xs h-1 py-[17px] pl-6"
               placeholder="Digite para pesquisar..."
@@ -98,33 +122,35 @@ function InventoryTable() {
           </div>
           <div
             className={
-              "flex items-center gap-5  py-1 h-fit px-2 rounded cursor-pointer"
+              "flex items-center gap-5 py-1 h-fit px-2 rounded cursor-pointer"
             }
           >
             <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
               <PiPlusBold
-                size={22}
                 onClick={handleOpenModal}
                 className="cursor-pointer"
               />{" "}
             </div>
+            <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
+              <PiFunnelFill
+                // onClick={handleOpenModal}
+                className="cursor-pointer"
+              />
+            </div>
             {table.getCanPreviousPage() && (
               <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
-                <PiArrowLeftBold
-                  size={22}
-                  onClick={() => table.previousPage()}
-                />
+                <PiArrowLeftBold onClick={() => table.previousPage()} />
               </div>
             )}
             {/* <span>{table.getState().pagination.pageIndex + 1}</span> */}
             {table.getCanNextPage() && (
               <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
-                <PiArrowRightBold size={22} onClick={() => table.nextPage()} />
+                <PiArrowRightBold onClick={() => table.nextPage()} />
               </div>
             )}
           </div>
         </div>
-        <div className="bg-white overflow-auto h-[70vh] w-full mt-5">
+        <div className="bg-white overflow-auto md: h-[70vh] w-full mt-5 scrollbar-thin scrollbar-thumb-[#cddbfa] scrollbar-track-[#f5f7fc]   scrollbar-corner-white ">
           <table className="table">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
@@ -138,7 +164,6 @@ function InventoryTable() {
                           header.getContext()
                         )}{" "}
                         <PiArrowDownBold
-                          size={16}
                           className="cursor-pointer"
                           onClick={() => header.column.toggleSorting(false)}
                         />
@@ -151,6 +176,7 @@ function InventoryTable() {
             <tbody>
               {table.getRowModel().rows.map((row) => (
                 <tr
+                  className="text-[12px]"
                   onClick={() => {
                     setDataTable(row.original); // pega o conteudo da tabela/coluna
                     setModalIsOpen(true); // abre o modal ao clicar na linha
@@ -178,7 +204,31 @@ function InventoryTable() {
       >
         {" "}
         {/*Modal que exibe os detalhes do produto*/}
-        <FormsProduct setDataTable={setDataTable} dataTable={dataTable} />
+        <div className="flex flex-col gap-4">
+          <div
+            className="flex px-10 py-2 h-[50vh] w-full shadow-custom bg-white rounded-md
+               max-lg:h-full max-md:h-full"
+          >
+            <FormsProduct setDataTable={setDataTable} dataTable={dataTable} />
+          </div>
+          <div className="flex items-center justify-center gap-4">
+            <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
+              <PiPlusBold className="cursor-pointer" />
+            </div>
+            <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
+              <PiFunnelFill className="cursor-pointer" />
+            </div>
+            <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
+              <PiXBold className="cursor-pointer" />
+            </div>
+            <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
+              <PiTrashSimpleFill className="cursor-pointer" />
+            </div>
+            <div className="text-white bg-customBlue hover:bg-black transition-all duration-300 rounded-md py-2 h-fit px-4 cursor-pointer">
+              <PiPencilSimpleFill className="cursor-pointer" />
+            </div>
+          </div>
+        </div>
       </Modal>
     </main>
   );

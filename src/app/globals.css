@@ -4,6 +4,7 @@
 
 html,
 body {
+  font-family: Arial, sans-serif;
   max-width: 100lvw;
   overflow-x: hidden;
   /* overflow-y: hidden; */

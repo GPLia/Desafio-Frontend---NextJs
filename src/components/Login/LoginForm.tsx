@@ -30,7 +30,7 @@ export default function LoginForm() {
       onSubmit={login}
       className="bg-white p-12 rounded-lg w-96 max-w-full flex justify-center items-center flex-col gap-2"
     >
-      <h2 className="font-bold text-xl mb-3">Faça seu Login</h2>
+      <h2 className="text-black font-bold text-xl mb-3">Faça seu Login</h2>
       <input
         name="login"
         type="login"
@@ -41,9 +41,9 @@ export default function LoginForm() {
         name="password"
         type="password"
         placeholder="Senha"
-        className="input input-primary w-full"
+        className="input input-primary  w-full"
       />
-      <button className="btn w-full" type="submit">
+      <button className="text-white btn w-full bg-customBlue" type="submit">
         Login
       </button>
       {error === "CredentialsSignin" && (

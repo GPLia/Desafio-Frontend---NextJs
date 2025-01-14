@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 interface openSideBarProps {
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
   handleToogle: () => void;
 }
@@ -15,5 +16,6 @@ export function useOpenSideBar(): openSideBarProps {
   return {
     isOpen,
     handleToogle,
+    setIsOpen,
   };
 }

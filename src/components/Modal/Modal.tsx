@@ -15,14 +15,14 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
   return (
     // Retorna o componente Modal
     isOpen && (
-      <div className="modal modal-open bg-[#e2e6ee]">
-        <div className="modal-box max-w-full">
-          <h2 className="font-bold text-lg">{title}</h2>
+      <div className="modal modal-open">
+        <div className="modal-box w-full max-w-4xl min-w-[80vw] h-[80vh] min-h-[80vh] bg-[#e2e6ee]">
+          <h2 className="font-bold text-base">{title}</h2>
 
-          <div className="modal-action">{children}</div>
+          <div className="modal-action text-[12px]">{children}</div>
         </div>
         <button
-          className="text-white btn bg-customBlue absolute top-3 right-8 border-0"
+          className="text-white btn bg-customBlue hover:bg-black absolute top-3 right-8 border-0"
           onClick={onClose}
         >
           <PiXBold />
