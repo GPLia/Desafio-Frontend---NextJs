@@ -23,6 +23,10 @@ pnpm install
 ## Usage
 To run the development server:
 
+```sh
+pnpm run dev
+```
+
 Open http://localhost:3000 with your browser to see the result.
 
 ## Configuration
@@ -32,6 +36,15 @@ Create a .env.local file in the root of your project and add the following envir
 ```sh
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=your_secret_key
+```
+
+Generating the Secret Key
+You can generate a secret key using one of the following methods:
+
+Using OpenSSL (Terminal)
+
+```sh
+openssl rand -base64 32
 ```
 
 ## Providers
