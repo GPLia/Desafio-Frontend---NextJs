@@ -29,6 +29,9 @@ pnpm run dev
 
 Open http://localhost:3000 with your browser to see the result.
 
+Login: Teste
+Password:123
+
 ## Configuration
 Environment Variables
 Create a .env.local file in the root of your project and add the following environment variables:
