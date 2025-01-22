@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  react: {
-    useSuspense: false, // Desativa o Suspense
-  },
-  /* outras opções de configuração aqui */
+  /* config options here */
 };
 
 export default nextConfig;
