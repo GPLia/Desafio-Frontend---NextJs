@@ -1,8 +1,7 @@
-"use client";
+"use client"; // Ensure this is a client component
 
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
 export default function LoginForm() {
   const searchparams = useSearchParams();
@@ -27,31 +26,27 @@ export default function LoginForm() {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <form
-        onSubmit={login}
-        className="bg-white p-12 rounded-lg w-96 max-w-full flex justify-center items-center flex-col gap-2"
-      >
-        <h2 className="text-black font-bold text-xl mb-3">Faça seu Login</h2>
-        <input
-          name="login"
-          type="login"
-          placeholder="Login"
-          className="input input-primary w-full"
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Senha"
-          className="input input-primary  w-full"
-        />
-        <button className="text-white btn w-full bg-customBlue" type="submit">
-          Login
-        </button>
-        {error === "CredentialsSignin" && (
-          <div className="text-red-500">Email ou senha inválidos</div>
-        )}
-      </form>
-    </Suspense>
+    <form
+      onSubmit={login}
+      className="bg-white p-12 rounded-lg w-96 max-w-full flex justify-center items-center flex-col gap-2"
+    >
+      <h2 className="text-black font-bold text-xl mb-3">Faça seu Login</h2>
+      <input
+        name="login"
+        type="login"
+        placeholder="Login"
+        className="input input-primary w-full"
+      />
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        className="input input-primary w-full"
+      />
+      <button type="submit" className="btn btn-primary w-full mt-4">
+        Login
+      </button>
+      {error && <p className="text-red-500 mt-2">Login failed: {error}</p>}
+    </form>
   );
 }
